@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- AWP_In_Variable Name='"IN_Martxa"'-->
+<!-- AWP_In_Variable Name='"M_ConsignaCiclos"'-->
+<!-- AWP_In_Variable Name='"M_material_index"'-->
+<!-- AWP_In_Variable Name='"M_Manual_Override"'-->
+<!-- AWP_In_Variable Name='"M_Balb_1_Act"'-->
+<!-- AWP_In_Variable Name='"M_Balb_2_Act"'-->
+<!-- AWP_In_Variable Name='"M_Cil_Bultzatu"'-->
+
+<html lang="esp">
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+   <meta HTTP-EQUIV="REFRESH" CONTENT="3;URL=indexmio.html"> 
+
+   <title>Estrusio sistema</title>
+   <link href="Estrusorea_forms_with_program.css" rel="stylesheet">
+   <link href="index.css" rel="stylesheet">
+</head>
+<body>
+   <h1>   ERRONKA 5 - EXTRUSOR DE PLASTICO</h1> 
+   <div id="Automatico" style="position:absolute;left:1px;top:40px;width:700px;height:200px;z-index:5;">
+      <form name="wb_Form1" method="post" action="" id="wb_Form1" style="position:absolute;left:1px;top:40px;width:700px;height:200px;z-index:5;">
+         <p>              
+            <h2> Introduzca Configuracion Ciclo Automatico</h2>
+         </p>
+         <p>
+            <input type="text" value='Introduce numero de ciclos'/>
+            <input type="number" name='"M_ConsignaCiclos"'  min="0" max="100"/>
+         </p>
+        
+         <p>
+            <input type="text" value='Introduce tipo plastico' />
+            <input type="number" name='"M_material_index"' list="listaplasticos" />
+         </p>
+         <p>
+            <input type="submit" value="Aceptar">      
+         </p>
+      </form>  
+      <datalist id="listaplasticos">
+         <option value="1">
+         <option value="2">
+         <option value="3">
+         <option value="4">
+         <option value="5">           
+      </datalist>    
+   </div>
+
+   <div id="Manual" style="position:absolute;left:1px;top: 300px;width:700px;height:200px;z-index:5;">
+         <p>         
+            <h2> Movimientos Modo Manual</h2>
+         </p>
+         <form name="Valvula1_ON" action="" style="position:absolute;left:5px;top:50px;width:700px;height:200px;z-index:5;">
+            <div>
+               <p>
+               <input type="submit" value="Apertura Valvula 1">
+               <input type="hidden" name='"M_Balb_1_Act"' value="1">
+               <input type="hidden" name='"M_Manual_Override"' value="1">              
+               </p>
+            </div>
+         </form>
+         <form name="Valvula1_OFF" action="" style="position:absolute;left:150px;top:50px;width:700px;height:200px;z-index:5;">
+            <div>
+               <p>               
+               <input type="submit" value="Cierre Valvula 1">
+               <input type="hidden" name='"M_Balb_1_Act"' value="0">
+               <input type="hidden" name='"M_Manual_Override"' value="0">
+               </p>
+            </div>
+         </form>
+         <form name="Valvula2_ON" action="" style="position:absolute;left:5px;top:90px;width:700px;height:200px;z-index:5;">   
+            <div>
+               <p>
+               <input type="submit" value="Apertura Valvula 2">
+               <input type="hidden" name='"M_Balb_2_Act"' value="1">
+               <input type="hidden" name='"M_Manual_Override"' value="1">               
+               </p>
+            </div>
+         </form>
+         <form name="Valvula2_OFF" action="" style="position:absolute;left:150px;top:90px;width:700px;height:200px;z-index:5;">   
+            <div>
+               <p>               
+               <input type="submit" value="Cierre Valvula 2">
+               <input type="hidden" name='"M_Balb_2_Act"' value="0">
+               <input type="hidden" name='"M_Manual_Override"' value="0">
+               </p>
+            </div>
+         </form>
+         
+         <form name="Cilindro_ON" action="" style="position:absolute;left:5px;top:130px;width:700px;height:200px;z-index:5;">   
+            <p>
+            <input type="submit" value="Avance Cil. Expul.">
+            <input type="hidden" name='"M_Cil_Bultzatu"' value="1">
+            <input type="hidden" name='"M_Manual_Override"' value="1">           
+            </p>
+         </form>
+         <form name="Cilindro_OFF" action="" style="position:absolute;left:150px;top:130px;width:700px;height:200px;z-index:5;">   
+            <p>            
+            <input type="submit" value="Retroceso Cil. Exp.">
+            <input type="hidden" name='"M_Cil_Bultzatu"' value="0">
+            <input type="hidden" name='"M_Manual_Override"' value="0">
+            </p>
+         </form>
+      </div>
+
+      <div id="wb_Image1" style="position:absolute;left:16px;top:600px;width:759px;height:271px;z-index:4;">
+      <img src="completa_650_232.png" id="Image1" alt="">
+      </div>
+
+      <div id="Velocidad_Motor" style="position:absolute;left:16px;top: 655px;px;width:150px;height:40px;z-index:4;">
+         Velocidad Motor: :="M_Var_Velocidad":                 
+      </div>     
+      
+      <div id="Valvula_1" style="position:absolute;left:220px;top: 550px;px;width:150px;height:40px;z-index:4;">
+         Valvula 1: :="M_Status_Valv_1":                 
+      </div>     
+      <div id="Valvula_2" style="position:absolute;left:510px;top: 655px;px;width:150px;height:40px;z-index:4;">
+         Valvula 2: :="M_Status_Valv_2":                 
+      </div>    
+      <div id="Cilindro" style="position:absolute;left:675px;top: 550px;px;width:125px;height:40px;z-index:4;">
+         Cilindro Extrusion: :="M_Status_Cil":                 
+      </div> 
+      <div id="Ciclos" style="position:absolute;left:550px;top: 850px;px;width:150px;height:40px;z-index:4;">
+         Numero Ciclos: :="M_Num_Ciclos_Act":               
+      </div>           
+
+      
+        
+  
+      
+ 
+
+
+   
+
+</body>
+</html>
